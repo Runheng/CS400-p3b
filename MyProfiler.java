@@ -59,7 +59,7 @@ public class MyProfiler<K extends Comparable<K>, V> {
 		}
     }
     
-    private void remove(K key) {
+    public void remove(K key) {
     	// remove key and value pair from data structure
     	treemap.remove(key);
     	try {
