@@ -33,10 +33,8 @@ public class MyProfiler<K extends Comparable<K>, V> {
         // TODO: complete insert method
         // Insert K, V into both data structures
         
-        try {
-        	
+        try {  	
 			hashtable.insert(key, value);
-			
 			treemap.put(key, value);
 		} catch (IllegalNullKeyException e) {
 			// TODO Auto-generated catch block
@@ -50,9 +48,10 @@ public class MyProfiler<K extends Comparable<K>, V> {
     public void retrieve(K key) {
         // TODO: complete the retrieve method
         // get value V for key K from data structures
-    	treemap.get(key);
+    	
     	try {
 			hashtable.get(key);
+			treemap.get(key);
 		} catch (IllegalNullKeyException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,11 +61,12 @@ public class MyProfiler<K extends Comparable<K>, V> {
 		}
     }
     
-    public void remove(K key) {
+    private void remove(K key) {
     	// remove key and value pair from data structure
-    	treemap.remove(key);
+    	
     	try {
 			hashtable.remove(key);
+			treemap.remove(key);
 		} catch (IllegalNullKeyException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -87,11 +87,11 @@ public class MyProfiler<K extends Comparable<K>, V> {
             // See, ProfileSample.java for example.
             
             MyProfiler<Integer, Integer> mp = new MyProfiler<Integer,Integer>();
-            System.out.println(11);
+            
             for(int i = 0; i < numElements; i++) {
             	mp.insert(i, i);
             }
-            System.out.println(110);
+            
             for(int i = 0; i < numElements; i++) {
             	mp.retrieve(i);
             }
