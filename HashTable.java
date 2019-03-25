@@ -109,6 +109,9 @@ public class HashTable<K extends Comparable<K>, V> implements HashTableADT<K, V>
 	 * This is a default no-arg constructor
 	 */
 	public HashTable() {
+		capacity = 11;
+		loadFactorThreshold = 0.75;
+		hashTable = new Object[capacity];
 	}
 
 	/**
