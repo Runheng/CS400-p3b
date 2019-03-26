@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 ////////////////////ALL ASSIGNMENTS INCLUDE THIS SECTION /////////////////////
 //
-//Assignment:      Hash Table Implementation
+//Assignment:      p3b Performance Analysis
 //Title:           HashTable
-//Files:           HashTable, HashTableTest
+//Files:           HashTable, MyProfiler
 //Course:          CS400 2019 Spring Lec004
-//Due date:        10pm Mar 
+//Due date:        10pm Mar 28
 //
 //Author:          Runheng Lei
 //Email:           rlei5@wisc.edu
@@ -36,18 +36,11 @@ import java.util.ArrayList;
 //
 /////////////////////////////// 80 COLUMNS WIDE ///////////////////////////////
 
-
-// TODO: comment and complete your HashTableADT implementation
-// DO ADD UNIMPLEMENTED PUBLIC METHODS FROM HashTableADT and DataStructureADT TO YOUR CLASS
-// DO IMPLEMENT THE PUBLIC CONSTRUCTORS STARTED
-// DO NOT ADD OTHER PUBLIC MEMBERS (fields or methods) TO YOUR CLASS
-//
-// TODO: implement all required methods
-//
 // TODO: describe the collision resolution scheme you have chosen
 // identify your scheme as open addressing or bucket
 //
 // TODO: explain your hashing algorithm here 
+//
 // I use array of linked nodes (linked buckets) as the resolution of collision. As for hashing
 // algorithm, I first use java's hashCode() method to get the hashCode of a key, and then use
 // hashCode/table size to get hashIndex, and then store that key into array[hashIndex], then if 
