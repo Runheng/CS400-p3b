@@ -1,3 +1,27 @@
+////////////////////ALL ASSIGNMENTS INCLUDE THIS SECTION /////////////////////
+//
+//Assignment:      p3b Performance Analysis
+//Title:           conclusions.txt
+//Files:           HashTable, MyProfiler, conclusions.txt
+//Course:          CS400 2019 Spring Lec004
+//Due date:        10pm Mar 28
+//
+//Author:          Runheng Lei
+//Email:           rlei5@wisc.edu
+//Lecturer's Name: Kuemmel 
+//Known bugs:      None
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+//Students who get help from sources other than their partner must fully 
+//acknowledge and credit those sources of help here.  Instructors and TAs do 
+//not need to be credited here, but tutors, friends, relatives, room mates, 
+//strangers, and others do.  If you received no outside help from either type
+//of source, then please explicitly indicate NONE.
+//
+//Persons:         NONE
+//Online Sources:  NONE
+//
+/////////////////////////////// 80 COLUMNS WIDE ///////////////////////////////
 p3b CONCLUSIONS.TXT
 
 Complete p3b and answer the following questions using results of running
@@ -6,14 +30,40 @@ Java Flight Recorder and Java Mission Control to justify your conclusions..
 1) What can you tell about the performance of your hash table implementation compared to Java's tree map? 
 Explain why (or when) your hash table is better or worse than Java's Tree Map.
 
+Overall hash table requires much less time to execute all codes compared with Java's Tree Map. For insertion, 
+both requires a lot time, but hash table does better, in remove and retrieve method, hash table has a much 
+better performance than java's tree map.
 
 2) What did you observe in java mission control to come to the conclusion above?
 
+In the "Overview" of "Code" section of "my_profile.jfr", the java.util pack consumes 60.76% of time, which means 
+java's tree map's execution makes up of more than half of time used, while the default package(hash table classes)
+only occupies 13.92% of time, and thus hash table has a better overall performance.
+Also, in "Call Tree" of "Code" section of "my_profiler.jfr" and "my_heap_stats_profile.jfr", the percentages of
+time used by each method are clearly listed. From both reports, hash table's insert method takes less than 40%,
+but java's tree map takes more than 50%; from "my_profiler.jfr", java's treemap's remove takes 10.38%, while
+hash table's remove only takes 0.25%, a much smaller proportion of time; from "my_heap_stats_profile.jfr", 
+java's treemap's remove takes 11.25% of time, and the data for hash table does not even show up, so I checked with
+TA and he told me that this is because the time used by hash table's remove method is too short compared with others,
+so the system's report just neglect its influence in time; same theory can be applied to retrieve's method, from
+"my_heap_stats_profile.jfr", treemap's retrieve takes 10.00% of time and hashtable's retrieve takes about 0.25%,
+obviously smaller number here, and from "my_profiler.jfr", the number for hashtable's retrieve does not show up,
+so same theory as above, the time it consumes is too short compared with treemap, so the system report just ignore it.
 
 3) SCREENSHOT_001.PNG NOTES: Briefly describe what this image 001 shows
 
+This screenshot contains the "Call Tree" of "Code" section from both "my_profile.jfr" and "my_heap_stats_profile.jfr";
+it displays the time percentage used by insert, retrieve, and remove methods executed by both hash table and java's 
+tree map, which offers a clear view of better performance of hash table than java's tree map.
+(data and comparison are analyzed in Q2)
 
 4) SCREENSHOT_002.PNG NOTES: Briefly describe what this image 002 shows
 
+This screenshot is the "Overview" of "Code" section of "my_profile.jfr".The pie graph gives the comparison of hash 
+table and java's treemap's overall performance in execution time. (data and comparison are analyzed in Q2)
 
 5) Describe other screenshots if you include them in your submission.
+
+This screenshot contains the “Hot Methods" of "Code" section from both "my_profile.jfr" and "my_heap_stats_profile.jfr";
+it gives a different detailed version of time consumed by each method. It also provides comparison between the performance
+of hash table and java's treemap.

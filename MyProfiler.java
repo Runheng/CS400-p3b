@@ -17,7 +17,7 @@
 //
 //Assignment:      p3b Performance Analysis
 //Title:           MyProfiler
-//Files:           HashTable, MyProfiler
+//Files:           HashTable, MyProfiler, conclusions.txt
 //Course:          CS400 2019 Spring Lec004
 //Due date:        10pm Mar 28
 //
